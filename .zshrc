@@ -116,24 +116,27 @@ prompt_virtualenv() {
   fi
 }
 
-build_prompt() {
-  RETVAL=$?
-  prompt_status
-  prompt_virtualenv
-  #prompt_aws
-  #prompt_context
-  prompt_dir
-  prompt_git
-  prompt_bzr
-  prompt_hg
-  prompt_end
-}
+# Remove the gunff from the begining of prompt (user@machine...):
+prompt_context(){}
+
+#build_prompt() {
+#  RETVAL=$?
+#  prompt_status
+#  prompt_virtualenv
+#  #prompt_aws
+#  #prompt_context
+#  prompt_dir
+#  prompt_git
+#  prompt_bzr
+#  prompt_hg
+#  prompt_end
+#}
 #autoload -U +X bashcompinit && bashcompinit
 #autoload -U +X compinit && compinit
-source /usr/local/etc/bash_completion.d/az
+#source /usr/local/etc/bash_completion.d/az
+source /etc/bash_completion.d/azure-cli
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export NVS_HOME="$HOME/.nvs"

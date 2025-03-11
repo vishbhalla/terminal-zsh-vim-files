@@ -1,3 +1,5 @@
+" Install this: https://github.com/junegunn/vim-plug
+
 call plug#begin()
 "
 " After adding a git plugin below, run: ":PlugInstall"
@@ -6,7 +8,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 " Below plugin causing weird chars on end of some tf lines
 " Plug 'juliosueiras/vim-terraform-completion'
@@ -14,6 +16,7 @@ call plug#end()
 
 let g:rainbow_active = 1
 set laststatus=2
+set number
 
 " Syntastic Config
 set statusline+=%#warningmsg#
@@ -47,6 +50,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Open .hcl files as terraform (for pretty colours)
 autocmd BufNewFile,BufRead *.hcl set syntax=terraform
+autocmd BufNewFile,BufRead *.template set syntax=yaml
 
 set hlsearch
-

@@ -1,0 +1,9 @@
+copy-on-select = clipboard
+# use: "ghostty +list-fonts" to see all fonts available
+font-family = MesloLGS Nerd Font Mono
+background-opacity = 0.9
+# use: "ghostty +list-themes" to see all themes available
+#theme = cyberpunk
+#theme = Desert
+theme = DoomOne
+
